@@ -21,8 +21,13 @@ body{
     background-image: url("golfBackground.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    padding: 25px;
 }
 
 label{
     padding-left: 5%;
+}
+
+.heading{
+    text-align: center !important;
 }

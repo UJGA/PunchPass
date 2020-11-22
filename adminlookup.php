@@ -37,13 +37,14 @@
 
     <div class="lookup">
         <h1>Lookup Pass</h1>
-        <h3>Please enter last name or email</h3>
-        <form action="lookup.php" method="post">
-            <label for="lastName">
+        <h3>Please enter an email</h3>
+        <form action="adminlookup.php" method="post">
+            <!-- <label for="lastName">
                 <h5>Last Name</h5>
             </label>
             <input type="text" name="Last Name" placeholder="Last Name" id="lastName">
-            <br><br>
+            <br><br> -->
+            <br>
             <label for="email">
                 <h5>Email</h5>
             </label>
@@ -54,7 +55,16 @@
         </form>
         </div>
         </div>  
-    
+
+        <h1>List of Users</h1>
+        <?php 
+        require_once "db.php";
+          $res = mysql_query("SELECT * FROM users");
+
+          while($row = mysql_fetch_array($res))
+            echo "$row[id]. $row[fName] <a href='edit.php?edit=$row[id]'> edit</a><br />";
+        ?>
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         

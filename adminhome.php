@@ -3,7 +3,7 @@
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.html');
+	header('Location: adminlogin.html');
 	exit;
 }
 
@@ -61,6 +61,12 @@ if (!isset($_SESSION['loggedin'])) {
       <div class="register">
         <h1>Welcome <?=$_SESSION['name']?></h1>
         <?php echo "Today is " . date("l") . " " . date("m/d/y") . "<br><br>";?>
+
+        <a class="weatherwidget-io" href="https://forecast7.com/en/40d30n111d69/orem/?unit=us" data-label_1="OREM" data-label_2="WEATHER" data-theme="original" >OREM WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+<br><br>
 
         <a href="adminregister.html"><button type="button" class="btn btn-primary">Register a User</button></a>
         <a href="users/index.php"><button type="button" class="btn btn-success">Lookup a User</button></a>

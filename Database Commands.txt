@@ -1,0 +1,36 @@
+#Create the punchpass database
+CREATE DATABASE punchpass;
+
+#Create the accounts table - Used for logging in for the admin
+CREATE TABLE accounts (
+	id int NOT NULL AUTO_INCREMENT,
+	username varchar(255),
+	password varchar(255),
+	email varchar(255),
+	PRIMARY KEY (id)
+
+);
+
+#create the users table - Where the punch pass infromation will be held
+CREATE TABLE users (
+	id int NOT NULL AUTO_INCREMENT,
+	fName varchar(255),
+	lName varchar(255),
+	phone varchar(255),
+	email varchar(255),
+	passType varchar(30),
+	uses int,
+	PRIMARY KEY (id)
+);
+
+# Insert test admin account username is test and password is test
+INSERT INTO `accounts`(`username`, `password`, `email`) VALUES ('test','test', 'test@test.com');
+
+#Insert test users into the users table for demonstration.
+INSERT INTO `users`(`fName`, `lName`, `phone`, `email`, `passType`, `uses`) VALUES ('John','Doe', '4542348954', 'jDoe@gmail.com', '9 Walking', 12);
+INSERT INTO `users`(`fName`, `lName`, `phone`, `email`, `passType`, `uses`) VALUES ('Robert','Downey', '6768987672', 'IronMan@gmail.com', '9 Riding', 3);
+INSERT INTO `users`(`fName`, `lName`, `phone`, `email`, `passType`, `uses`) VALUES ('Bruce','Wayne', '9998760987', 'thebat@gmail.com', '9 Riding', 59);
+INSERT INTO `users`(`fName`, `lName`, `phone`, `email`, `passType`, `uses`) VALUES ('Alfred','', '9986532894', 'thebutler@gmail.com', '9 Riding', 14);
+INSERT INTO `users`(`fName`, `lName`, `phone`, `email`, `passType`, `uses`) VALUES ('Bruce','Banner', '7776653782', 'greenandmean@gmail.com', '9 Walking', 10);
+INSERT INTO `users`(`fName`, `lName`, `phone`, `email`, `passType`, `uses`) VALUES ('Doug','Dimmadome', '8887765565', 'dimsdaledimmadome@gmail.com', '9 Riding', 1);
+

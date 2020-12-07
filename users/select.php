@@ -16,6 +16,7 @@ $output = '';
 ORDER BY email ASC";  
  $result = mysqli_query($connect, $sql);  
  $output .= '  
+ 
       <div class="table-responsive">  
            <table class="table table-bordered" style="background-color:white;">  
                 <tr>  

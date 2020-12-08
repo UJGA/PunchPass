@@ -7,14 +7,6 @@ if (!isset($_SESSION['loggedin'])) {
 	exit;
 }
 
-// WILL NEED TO CHANGE
-
-// if($_SESSION["visitor"] == 'Y')
-// {
-//    header('Location: visitor.php');
-//    exit;
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
